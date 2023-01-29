@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="imgDiv" style="background-image: url('{{ url_for('static', filename='img/flask.png') }}');"></div>
+<div class="box">
+	<h1>Authentication</h1>
+    <!-- Conditional Statement-->
+    {% if not logged_in: %}
+        <a href="{{ url_for('login_page') }}" class="btn btn-primary btn-block btn-large">Login</a>
+        <a href="{{ url_for('register_page') }}" class="btn btn-secondary btn-block btn-large">Register</a>
+    {% endif %}
+</div>
+
+{% endblock %}
